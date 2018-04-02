@@ -1,0 +1,15 @@
+@import "~uikit/src/scss/variables-theme.scss";
+@import "~uikit/src/scss/mixins-theme.scss";
+@import "~uikit/src/scss/uikit-theme.scss";
+
+body {
+  min-height: 100vh;
+  background: {
+    color: maroon;
+  }
+;
+}
+
+main {
+  flex: 1 0 auto;
+}

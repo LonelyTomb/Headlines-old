@@ -2,6 +2,9 @@ const webpack = require('webpack')
 const path = require('path')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const ManifestPlugin = require('webpack-manifest-plugin')
+// const HtmlWebpackPlugin = require('html-webpack-plugin')
+const WriteFilePlugin = require('write-file-webpack-plugin')
+
 /*
  * We've enabled commonsChunkPlugin for you. This allows your app to
  * load faster and it splits the modules you provided as entries across
@@ -25,16 +28,15 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 module.exports = {
 	entry: {
 		main: path.join(__dirname, 'public/javascripts/main.js'),
-		vendor: [
-			'uikit'
-		],
+		uikit: ['uikit', path.join(__dirname, 'public/stylesheets/style.scss')],
 		'uikit-icons': './node_modules/uikit/dist/js/uikit-icons.js'
 	},
 
 	output: {
 		filename: 'js/[name].js',
 		chunkFilename: '[name].[chunkhash].js',
-		path: path.resolve(__dirname, 'public/dist')
+		path: path.resolve(__dirname, 'public/dist'),
+		publicPath: '/dist/'
 	},
 
 	module: {
@@ -46,6 +48,15 @@ module.exports = {
 
 				options: {
 					presets: ['es2015']
+				}
+			},
+			{
+				test: /\.ejs$/,
+				loader: 'ejs-loader',
+				query: {
+					variable: 'data',
+					interpolate: '\\{\\{(.+?)\\}\\}',
+					evaluate: '\\[\\[(.+?)\\]\\]'
 				}
 			},
 			{
@@ -72,16 +83,19 @@ module.exports = {
 	},
 
 	plugins: [
-		new ExtractTextPlugin('css/style.css'),
+		new ExtractTextPlugin('css/[name].css'),
 		new CleanWebpackPlugin(['dist']),
-		new ManifestPlugin(),
+		// new HtmlWebpackPlugin({
+		// 	template: 'views/partials/head.ejs'
+		// }),
+		new ManifestPlugin({}),
+		new WriteFilePlugin({
+			test: /^(?!.*(hot)).*/
+		}),
 		new webpack.HashedModuleIdsPlugin(),
 		new webpack.optimize.CommonsChunkPlugin({
-			name: 'vendor',
-			minChunks: Infinity
-		})
-		// new webpack.optimize.CommonsChunkPlugin({
-		// 	name: 'manifest'
-		// })
+			name: 'uikit'
+		}),
+		new webpack.ProvidePlugin({UIkit: 'uikit'})
 	]
 }

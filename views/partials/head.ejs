@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="/dist/css/uikit.css">
+<script src=/dist/js/main.js></script>
+<script>
+	if ('serviceWorker' in navigator) {
+		navigator.serviceWorker.register('/sw.js', {
+			scope: '/'
+		})
+			.then(sw => {
+				if (sw.waiting) {
+					UIkit.notification("AAA", {pos: 'top-right'})
+				}
+				if (sw.installing) {
+
+				}
+				sw.addEventListener('updatefound', () => {
+					sw.addEventListener('statechange', () => {
+						if (this.state === 'installed') {
+							//Update
+						}
+					})
+				})
+			})
+			.catch(error => {
+				console.log('fail', error)
+			})
+	}
+
+</script>

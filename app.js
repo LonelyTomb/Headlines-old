@@ -7,13 +7,15 @@ const sassMiddleware = require('node-sass-middleware')
 const webpack = require('webpack')
 const webpackDevMiddleware = require('webpack-dev-middleware')
 
+//  Express Routes
 const indexRouter = require('./routes/index')
 const usersRouter = require('./routes/users')
 
 const app = express()
+
+//  Webpack-dev-middleware
 const config = require('./webpack.dev.js')
 const compiler = webpack(config)
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
@@ -30,7 +32,7 @@ app.use(cookieParser())
 app.use(sassMiddleware({
 	src: path.join(__dirname, 'public'),
 	dest: path.join(__dirname, 'public'),
-	indentedSyntax: true, // true = .sass and false = .scss
+	indentedSyntax: false, // true = .sass and false = .scss
 	sourceMap: true
 }))
 app.use(express.static(path.join(__dirname, 'public')))
@@ -53,6 +55,5 @@ app.use(function (err, req, res, next) {
 	res.status(err.status || 500)
 	res.render('error')
 })
-//  Service worker
 
 module.exports = app

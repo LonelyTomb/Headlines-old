@@ -1,5 +1,6 @@
 {
-  "uikit-icons.js": "/js/uikit-icons.js",
-  "main.js": "/js/main.js",
-  "vendor.js": "/js/vendor.js"
+  "main.js": "/dist/js/main.js",
+  "uikit-icons.js": "/dist/js/uikit-icons.js",
+  "uikit.js": "/dist/js/uikit.js",
+  "uikit.css": "/dist/css/uikit.css"
 }
