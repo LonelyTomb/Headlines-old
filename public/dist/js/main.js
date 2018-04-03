@@ -1,4 +1,4 @@
-webpackJsonp([0],{
+webpackJsonp([1],{
 
 /***/ "92o7":
 /***/ (function(module, exports, __webpack_require__) {
@@ -6,19 +6,12 @@ webpackJsonp([0],{
 "use strict";
 
 
-var _uikit = __webpack_require__("2EC8");
-
-var _uikit2 = _interopRequireDefault(_uikit);
-
-var _uikitIcons = __webpack_require__("/zV6");
-
-var _uikitIcons2 = _interopRequireDefault(_uikitIcons);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-_uikit2.default.use(_uikitIcons2.default);
+// import UIkit from 'uikit'
+// import Icons from 'uikit/dist/js/uikit-icons'
+window.UIkit = __webpack_require__("YMCN");
+// UIkit.use(Icons)
 
 /***/ })
 
 },["92o7"]);
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9wdWJsaWMvamF2YXNjcmlwdHMvbWFpbi5qcyJdLCJuYW1lcyI6WyJ1c2UiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7O0FBQUE7Ozs7QUFDQTs7Ozs7O0FBRUEsZ0JBQU1BLEdBQU4sdUIiLCJmaWxlIjoianMvbWFpbi5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBVSWtpdCBmcm9tICd1aWtpdCdcbmltcG9ydCBJY29ucyBmcm9tICd1aWtpdC9kaXN0L2pzL3Vpa2l0LWljb25zJ1xuXG5VSWtpdC51c2UoSWNvbnMpXG5cblxuXG4vLyBXRUJQQUNLIEZPT1RFUiAvL1xuLy8gLi9wdWJsaWMvamF2YXNjcmlwdHMvbWFpbi5qcyJdLCJzb3VyY2VSb290IjoiIn0=
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9wdWJsaWMvamF2YXNjcmlwdHMvbWFpbi5qcyJdLCJuYW1lcyI6WyJ3aW5kb3ciLCJVSWtpdCIsInJlcXVpcmUiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7O0FBQUE7QUFDQTtBQUNBQSxPQUFPQyxLQUFQLEdBQWUsbUJBQUFDLENBQVEsTUFBUixDQUFmO0FBQ0EsbUIiLCJmaWxlIjoianMvbWFpbi5qcyIsInNvdXJjZXNDb250ZW50IjpbIi8vIGltcG9ydCBVSWtpdCBmcm9tICd1aWtpdCdcbi8vIGltcG9ydCBJY29ucyBmcm9tICd1aWtpdC9kaXN0L2pzL3Vpa2l0LWljb25zJ1xud2luZG93LlVJa2l0ID0gcmVxdWlyZSgndWlraXQnKVxuLy8gVUlraXQudXNlKEljb25zKVxuXG5cblxuLy8gV0VCUEFDSyBGT09URVIgLy9cbi8vIC4vcHVibGljL2phdmFzY3JpcHRzL21haW4uanMiXSwic291cmNlUm9vdCI6IiJ9

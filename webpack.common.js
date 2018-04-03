@@ -51,6 +51,13 @@ module.exports = {
 				}
 			},
 			{
+				test: require.resolve('uikit'),
+				use: [{
+					loader: 'expose-loader',
+					options: 'UIkit'
+				}]
+			},
+			{
 				test: /\.ejs$/,
 				loader: 'ejs-loader',
 				query: {
