@@ -1,5 +1,5 @@
 let _updateReady = (sw) => {
-	UIkit.modal.confirm('New Version Available', {container: false})
+	UIkit.modal.confirm('New Version Available')
 		.then(() => {
 			//  Accept
 			sw.postMessage({action: 'skipWaiting'})

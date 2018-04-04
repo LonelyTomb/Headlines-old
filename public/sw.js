@@ -1,9 +1,10 @@
-const staticCacheName = 'headlines-v4s'
+const staticCacheName = 'headlines-v1'
 self.addEventListener('install', event => {
 	let cacheArray = [
-		'/',
-		'dist/js/main.js',
-		'dist/css/uikit.css'
+		'/skeleton',
+		'dist/css/uikit.css',
+		'dist/js/uikit.js',
+		'dist/js/main.js'
 	]
 	event.waitUntil(
 		caches.open(staticCacheName)
@@ -17,10 +18,16 @@ self.addEventListener('install', event => {
 })
 
 self.addEventListener('fetch', (event) => {
+	let requestUrl = new URL(event.request.url)
+	if (requestUrl.origin === location.origin) {
+		if (requestUrl.pathname === '/') {
+			event.respondWith(caches.match('/skeleton'))
+		}
+	}
+
 	event.respondWith(
 		caches.match(event.request).then(response => {
-			if (response) return response
-			return fetch(event.request)
+			return response || fetch(event.request)
 		})
 	)
 })
