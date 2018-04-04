@@ -1,4 +1,5 @@
 {
+  "idb.js": "/dist/js/idb.js",
   "uikit-icons.js": "/dist/js/uikit-icons.js",
   "main.js": "/dist/js/main.js",
   "uikit.js": "/dist/js/uikit.js",

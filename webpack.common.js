@@ -29,7 +29,8 @@ module.exports = {
 	entry: {
 		main: path.join(__dirname, 'public/javascripts/main.js'),
 		uikit: ['uikit', path.join(__dirname, 'public/stylesheets/style.scss')],
-		'uikit-icons': './node_modules/uikit/dist/js/uikit-icons.js'
+		'uikit-icons': './node_modules/uikit/dist/js/uikit-icons.js',
+		'idb': path.join(__dirname, 'public/idb/idb.js')
 	},
 
 	output: {

@@ -24,6 +24,7 @@
     "express": "~4.16.0",
     "extract-text-webpack-plugin": "^3.0.2",
     "http-errors": "~1.6.2",
+    "idb": "^2.1.1",
     "morgan": "~1.9.0",
     "newsapi": "^2.2.1",
     "node-sass": "^4.8.3",
