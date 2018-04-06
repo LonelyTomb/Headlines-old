@@ -16,25 +16,25 @@ let _trackInstalling = (sw) => {
 	})
 }
 if ('serviceWorker' in navigator) {
-	navigator.serviceWorker.register('/sw.js', {
-		scope: '/'
-	}).then(sw => {
-		if (sw.waiting) {
-			_updateReady(sw.waiting)
-			return
-		}
-		if (sw.installing) {
-			_trackInstalling(sw.installing)
-			return
-		}
-		sw.addEventListener('updatefound', () => {
-			_trackInstalling(sw.installing)
-		})
-	}
-	).catch(error => {
-		console.log('fail', error)
-	})
-	navigator.serviceWorker.addEventListener('controllerchange', () => {
-		window.location.reload()
-	})
+	// navigator.serviceWorker.register('/sw.js', {
+	// 	scope: '/'
+	// }).then(sw => {
+	// 	if (sw.waiting) {
+	// 		_updateReady(sw.waiting)
+	// 		return
+	// 	}
+	// 	if (sw.installing) {
+	// 		_trackInstalling(sw.installing)
+	// 		return
+	// 	}
+	// 	sw.addEventListener('updatefound', () => {
+	// 		_trackInstalling(sw.installing)
+	// 	})
+	// }
+	// ).catch(error => {
+	// 	console.log('fail', error)
+	// })
+	// navigator.serviceWorker.addEventListener('controllerchange', () => {
+	// 	window.location.reload()
+	// })
 }

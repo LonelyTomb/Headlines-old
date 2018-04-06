@@ -5,13 +5,14 @@
 body {
   min-height: 100vh;
   background: {
-    color: lighten(green, 0.5);
+    color: transparentize(#FFFFFF, 0.2);
   }
 ;
 }
 
 main {
   flex: 1 0 auto;
+
 }
 
 h1 {

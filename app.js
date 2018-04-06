@@ -6,6 +6,8 @@ const logger = require('morgan')
 const sassMiddleware = require('node-sass-middleware')
 const webpack = require('webpack')
 const webpackDevMiddleware = require('webpack-dev-middleware')
+// const bodyParser = require('body-parser')
+const cors = require('cors')
 
 //  Express Routes
 const indexRouter = require('./routes/index')
@@ -26,8 +28,11 @@ app.use(webpackDevMiddleware(compiler, {
 }))
 app.use(require('webpack-hot-middleware')(compiler))
 
-app.use(logger('dev'))
+app.use(logger('combined'))
+app.use(cors())
 app.use(express.json())
+// app.use(bodyParser.json())
+// app.use(bodyParser.urlencoded({extended: true}))
 app.use(express.urlencoded({extended: false}))
 app.use(cookieParser())
 app.use(sassMiddleware({

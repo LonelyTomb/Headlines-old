@@ -1,4 +1,4 @@
-const staticCacheName = 'headlines-v4'
+const staticCacheName = `headlines-v3`
 self.addEventListener('install', event => {
 	let cacheArray = [
 		'/skeleton',

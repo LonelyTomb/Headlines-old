@@ -92,7 +92,7 @@ module.exports = {
 
 	plugins: [
 		new ExtractTextPlugin('css/[name].css'),
-		new CleanWebpackPlugin(['dist']),
+		new CleanWebpackPlugin(['public/dist']),
 		// new HtmlWebpackPlugin({
 		// 	template: 'views/partials/head.ejs'
 		// }),
